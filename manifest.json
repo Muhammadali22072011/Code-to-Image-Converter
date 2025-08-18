@@ -1,0 +1,51 @@
+{
+    "name": "Code to Image Converter",
+    "short_name": "CodeToImage",
+    "description": "Создавайте красивые изображения из вашего кода с помощью современного конвертера с поддержкой множества языков программирования и тем оформления",
+    "version": "1.0.0",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#0f172a",
+    "theme_color": "#3b82f6",
+    "orientation": "any",
+    "scope": "/",
+    "categories": [
+        "developer",
+        "productivity",
+        "utilities",
+        "photo"
+    ],
+    "lang": "ru",
+    "icons": [
+        {
+            "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgdmlld0JveD0iMCAwIDE5MiAxOTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxOTIiIGhlaWdodD0iMTkyIiByeD0iMjQiIGZpbGw9IiMzYjgyZjYiLz4KPHN2ZyB4PSI0OCIgeT0iNDgiIHdpZHRoPSI5NiIgaGVpZ2h0PSI5NiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+CjxyZWN0IHg9IjMiIHk9IjMiIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCIgcng9IjIiIHJ5PSIyIi8+CjxjaXJjbGUgY3g9IjkiIGN5PSI5IiByPSIyIi8+CjxwYXRoIGQ9Im0yMSAxNS03LjMtNy4zYTIuNCAyLjQgMCAwIDAtMy40IDBMMyw5Ii8+Cjwvc3ZnPgo8L3N2Zz4KPC9zdmc+",
+            "sizes": "192x192",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiByeD0iNjQiIGZpbGw9IiMzYjgyZjYiLz4KPHN2ZyB4PSIxMjgiIHk9IjEyOCIgd2lkdGg9IjI1NiIgaGVpZ2h0PSIyNTYiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPgo8cmVjdCB4PSIzIiB5PSIzIiB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHJ4PSIyIiByeT0iMiIvPgo8Y2lyY2xlIGN4PSI5IiBjeT0iOSIgcj0iMiIvPgo8cGF0aCBkPSJtMjEgMTUtNy4zLTcuM2EyLjQgMi40IDAgMCAwLTMuNCAwTDMgOSIvPgo8L3N2Zz4KPC9zdmc+",
+            "sizes": "512x512",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTI4MCIgaGVpZ2h0PSI3MjAiIHZpZXdCb3g9IjAgMCAxMjgwIDcyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjEyODAiIGhlaWdodD0iNzIwIiBmaWxsPSIjMGYxNzJhIi8+CjxyZWN0IHg9IjY0IiB5PSI2NCIgd2lkdGg9IjExNTIiIGhlaWdodD0iNTkyIiByeD0iMTYiIGZpbGw9IiMxZTI5M2IiLz4KPHN2ZyB4PSI1MTIiIHk9IjI1NiIgd2lkdGg9IjI1NiIgaGVpZ2h0PSIyNTYiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjM2I4MmY2IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+CjxyZWN0IHg9IjMiIHk9IjMiIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCIgcng9IjIiIHJ5PSIyIi8+CjxjaXJjbGUgY3g9IjkiIGN5PSI5IiByPSIyIi8+CjxwYXRoIGQ9Im0yMSAxNS03LjMtNy4zYTIuNCAyLjQgMCAwIDAtMy40IDBMMyw5Ii8+Cjwvc3ZnPgo8L3N2Zz4KPC9zdmc+",
+            "sizes": "1280x720",
+            "type": "image/svg+xml"
+        }
+    ],
+    "features": [
+        "Code syntax highlighting",
+        "Multiple programming languages support",
+        "Beautiful themes",
+        "Export to PNG, JPEG, WebP, SVG",
+        "Customizable settings",
+        "Dark/Light mode",
+        "Offline support"
+    ],
+    "prefer_related_applications": false,
+    "related_applications": []
+}
