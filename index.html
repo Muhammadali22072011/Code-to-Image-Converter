@@ -5,25 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code to Image Converter</title>
     
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&family=Fira+Code:wght@300;400;500;600&family=Source+Code+Pro:wght@300;400;500;600&family=IBM+Plex+Mono:wght@300;400;500;600&family=Space+Mono:wght@400;700&family=Ubuntu+Mono:wght@400;700&family=Roboto+Mono:wght@300;400;500;600&family=Inconsolata:wght@300;400;500;600&family=Cascadia+Code:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- Syntax highlighting -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
-    
     <link rel="stylesheet" href="styles.css">
     <link rel="manifest" href="manifest.json">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
     <meta name="theme-color" content="#6366f1">
 </head>
-<body class="light-theme">
-    <!-- Top Navigation Bar -->
+<body>
     <header class="top-bar">
         <div class="container">
-            <!-- App Title -->
             <div class="app-title">
                 <div class="app-icon">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -33,10 +27,8 @@
                 </div>
                 <h1 data-i18n="app_title">Code to Image Converter</h1>
             </div>
-            
-            <!-- Main Controls -->
+
             <div class="main-controls">
-                <!-- Language Selector -->
                 <div class="dropdown-container">
                     <button class="dropdown-btn" id="languageDropdown">
                         <span class="dropdown-icon">JS</span>
@@ -60,8 +52,7 @@
                         <div class="dropdown-item" data-value="json" data-icon="JS">JSON</div>
                     </div>
                 </div>
-                
-                <!-- Theme Selector -->
+
                 <div class="dropdown-container">
                     <button class="dropdown-btn" id="themeDropdown">
                         <span class="theme-preview dracula-theme"></span>
@@ -88,7 +79,7 @@
                             <span>Monokai - Dark</span>
                         </div>
                         <div class="dropdown-item" data-value="vs-code">
-                            <span class="theme-preview vscode-theme"></span>
+                            <span class="theme-preview vs-code-theme"></span>
                             <span>VS Code - Dark</span>
                         </div>
                         <div class="dropdown-item" data-value="nord">
@@ -97,8 +88,7 @@
                         </div>
                     </div>
                 </div>
-                
-                <!-- Background Type -->
+
                 <div class="dropdown-container">
                     <button class="dropdown-btn" id="backgroundDropdown">
                         <span class="bg-preview gradient-bg"></span>
@@ -122,8 +112,7 @@
                         </div>
                     </div>
                 </div>
-            
-                <!-- Gradient Style -->
+
                 <div class="dropdown-container">
                     <button class="dropdown-btn" id="gradientDropdown">
                         <span class="gradient-preview warm-flame"></span>
@@ -167,8 +156,7 @@
                         </div>
                     </div>
                 </div>
-                
-                <!-- Settings Button -->
+
                 <button class="icon-btn settings-btn" id="settingsBtn">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <circle cx="12" cy="12" r="3"></circle>
@@ -181,10 +169,8 @@
                     <span data-i18n="settings">Settings</span>
                 </button>
             </div>
-            
-            <!-- Right Side Controls -->
+
             <div class="right-controls">
-                <!-- Language Switcher -->
                 <div class="dropdown-container">
                     <button class="dropdown-btn language-switcher" id="languageSwitcher">
                         <span class="flag-icon">🇺🇸</span>
@@ -208,15 +194,12 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </header>
 
-    <!-- Main Content Area -->
     <main class="main-content">
         <div class="container">
-            <!-- Code Editor Section -->
             <div class="editor-section">
                 <div class="editor-header">
                     <div class="tab">
@@ -240,38 +223,15 @@
                         </svg>
                             <span data-i18n="format">Format</span>
                         </button>
+                    </div>
+                </div>
+
+                <div class="editor-container">
+                    <div class="line-numbers" id="lineNumbers"></div>
+                    <textarea id="codeEditor" class="code-input" spellcheck="false"></textarea>
                 </div>
             </div>
-            
-            <div class="editor-container">
-                <div class="line-numbers" id="lineNumbers"></div>
-                    <textarea 
-                        id="codeEditor" 
-                        class="code-input" 
-                        placeholder="// Paste your code here...
-function fibonacci(n) {
-    if (n <= 1) return n;
-    return fibonacci(n - 1) + fibonacci(n - 2);
-}
 
-// Generate first 10 Fibonacci numbers
-for (let i = 0; i < 10; i++) {
-    console.log(`F(${i}) = ${fibonacci(i)}`);
-}"
-                        spellcheck="false"
-                    >function fibonacci(n) {
-    if (n <= 1) return n;
-    return fibonacci(n - 1) + fibonacci(n - 2);
-}
-
-// Generate first 10 Fibonacci numbers
-for (let i = 0; i < 10; i++) {
-    console.log(`F(${i}) = ${fibonacci(i)}`);
-}</textarea>
-            </div>
-        </div>
-
-            <!-- Live Preview Section -->
             <div class="preview-section">
                 <div class="preview-header">
                     <h3 data-i18n="live_preview">Live Preview</h3>
@@ -301,30 +261,22 @@ for (let i = 0; i < 10; i++) {
                         </svg>
                             <span data-i18n="share">Share</span>
                         </button>
-                </div>
-            </div>
-            
-            <div class="preview-container" id="previewContainer">
-                <div class="code-window" id="codeWindow">
-                    <div class="window-header">
-                        <div class="window-controls">
-                            <div class="window-control close"></div>
-                            <div class="window-control minimize"></div>
-                            <div class="window-control maximize"></div>
-                        </div>
-                        <div class="window-title" id="windowTitle">main.js</div>
-                        <div class="window-spacer"></div>
                     </div>
-                        <div class="window-content" id="windowContent">
-                        <pre><code id="highlightedCode" class="language-javascript">function fibonacci(n) {
-    if (n <= 1) return n;
-    return fibonacci(n - 1) + fibonacci(n - 2);
-}
+                </div>
 
-// Generate first 10 Fibonacci numbers
-for (let i = 0; i < 10; i++) {
-    console.log(`F(${i}) = ${fibonacci(i)}`);
-}</code></pre>
+                <div class="preview-container" id="previewContainer">
+                    <div class="code-window" id="codeWindow">
+                        <div class="window-header">
+                            <div class="window-controls">
+                                <div class="window-control close"></div>
+                                <div class="window-control minimize"></div>
+                                <div class="window-control maximize"></div>
+                            </div>
+                            <div class="window-title" id="windowTitle">main.js</div>
+                            <div class="window-spacer"></div>
+                        </div>
+                        <div class="window-content" id="windowContent">
+                            <pre><code id="highlightedCode" class="language-javascript"></code></pre>
                         </div>
                     </div>
                 </div>
@@ -332,7 +284,6 @@ for (let i = 0; i < 10; i++) {
         </div>
     </main>
 
-    <!-- Settings Modal -->
     <div class="modal-overlay" id="settingsModal">
         <div class="modal">
             <div class="modal-header">
@@ -344,7 +295,7 @@ for (let i = 0; i < 10; i++) {
                     </svg>
                 </button>
             </div>
-            
+
             <div class="modal-content">
                 <div class="settings-grid">
                     <div class="setting-group">
@@ -363,31 +314,31 @@ for (let i = 0; i < 10; i++) {
                             <option value="consolas">Consolas</option>
                         </select>
                     </div>
-                    
+
                     <div class="setting-group">
                         <label data-i18n="font_size">Font Size</label>
                         <div class="range-container">
                             <input type="range" id="fontSizeRange" min="10" max="24" value="14" class="setting-range">
-                        <span class="range-value" id="fontSizeValue">14px</span>
+                            <span class="range-value" id="fontSizeValue">14px</span>
                         </div>
                     </div>
-                    
+
                     <div class="setting-group">
                         <label data-i18n="line_height">Line Height</label>
                         <div class="range-container">
                             <input type="range" id="lineHeightRange" min="1.2" max="2.0" step="0.1" value="1.5" class="setting-range">
-                        <span class="range-value" id="lineHeightValue">1.5</span>
+                            <span class="range-value" id="lineHeightValue">1.5</span>
                         </div>
                     </div>
-                    
+
                     <div class="setting-group">
                         <label data-i18n="padding">Padding</label>
                         <div class="range-container">
                             <input type="range" id="paddingRange" min="16" max="48" value="24" class="setting-range">
-                        <span class="range-value" id="paddingValue">24px</span>
+                            <span class="range-value" id="paddingValue">24px</span>
+                        </div>
                     </div>
-                </div>
-                
+
                     <div class="setting-group">
                         <label data-i18n="window_width">Window Width</label>
                         <div class="range-container">
@@ -395,7 +346,7 @@ for (let i = 0; i < 10; i++) {
                             <span class="range-value" id="widthValue">600px</span>
                         </div>
                     </div>
-                    
+
                     <div class="setting-group">
                         <label data-i18n="corner_radius">Corner Radius</label>
                         <div class="range-container">
@@ -404,34 +355,44 @@ for (let i = 0; i < 10; i++) {
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="toggle-grid">
                     <label class="toggle-item">
                         <input type="checkbox" id="showLineNumbers" checked>
                         <div class="toggle-switch"></div>
                         <span data-i18n="show_line_numbers">Show Line Numbers</span>
                     </label>
-                    
+
                     <label class="toggle-item">
                         <input type="checkbox" id="showWindowFrame" checked>
                         <div class="toggle-switch"></div>
                         <span data-i18n="window_frame">Window Frame</span>
                     </label>
-                    
+
                     <label class="toggle-item">
                         <input type="checkbox" id="showShadow" checked>
                         <div class="toggle-switch"></div>
                         <span data-i18n="drop_shadow">Drop Shadow</span>
                     </label>
-                    
+
                     <label class="toggle-item">
                         <input type="checkbox" id="showReflection">
                         <div class="toggle-switch"></div>
                         <span data-i18n="reflection_effect">Reflection Effect</span>
                     </label>
                 </div>
+
+                <div class="settings-grid" style="margin-top: 16px;">
+                    <div class="setting-group">
+                        <label>Export Scale</label>
+                        <div class="range-container">
+                            <input type="range" id="exportScaleRange" min="1" max="3" step="1" value="2" class="setting-range">
+                            <span class="range-value" id="exportScaleValue">2x</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            
+
             <div class="modal-footer">
                 <button class="btn btn-secondary" id="resetBtn" data-i18n="reset_to_default">Reset to Default</button>
                 <button class="btn btn-primary" id="applyBtn" data-i18n="apply_changes">Apply Changes</button>
@@ -439,8 +400,7 @@ for (let i = 0; i < 10; i++) {
         </div>
     </div>
 
-    <!-- Theme Toggle Button (Bottom Right) -->
-    <button class="theme-toggle" id="themeToggle">
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
         <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="12" cy="12" r="5"></circle>
             <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -457,10 +417,7 @@ for (let i = 0; i < 10; i++) {
         </svg>
     </button>
 
-    <!-- Toast Container -->
     <div class="toast-container" id="toastContainer"></div>
-
-    <!-- Loading Overlay -->
     <div class="loading-overlay" id="loadingOverlay">
         <div class="loading-content">
             <div class="spinner"></div>
@@ -468,7 +425,6 @@ for (let i = 0; i < 10; i++) {
         </div>
     </div>
 
-    <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
