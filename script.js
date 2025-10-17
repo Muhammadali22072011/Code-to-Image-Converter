@@ -985,20 +985,41 @@ for i in range(10):
         });
     }
     
+    encodeShareData(data) {
+        const json = JSON.stringify(data);
+        const utf8Bytes = new TextEncoder().encode(json);
+        let binary = '';
+
+        utf8Bytes.forEach(byte => {
+            binary += String.fromCharCode(byte);
+        });
+
+        return btoa(binary);
+    }
+
+    decodeShareData(encoded) {
+        const binary = atob(encoded);
+        const bytes = Uint8Array.from(binary, char => char.charCodeAt(0));
+        const json = new TextDecoder().decode(bytes);
+
+        return JSON.parse(json);
+    }
+
     shareCode() {
         const code = this.codeEditor.value;
         const shareData = {
             code,
             settings: this.settings
         };
-        
+
         if (navigator.share) {
             navigator.share({
                 title: 'Code Snippet',
                 text: `Check out this ${this.languages[this.settings.language].name} code:\n\n${code}`,
             }).catch(console.error);
         } else {
-            const shareUrl = `${window.location.origin}${window.location.pathname}?data=${btoa(JSON.stringify(shareData))}`;
+            const encoded = this.encodeShareData(shareData);
+            const shareUrl = `${window.location.origin}${window.location.pathname}?data=${encoded}`;
             navigator.clipboard.writeText(shareUrl).then(() => {
                 this.showToast(this.t('share_link_copied'), '🔗');
             }).catch(() => {
@@ -1293,7 +1314,7 @@ for i in range(10):
         
         if (data) {
             try {
-                const decoded = JSON.parse(atob(data));
+                const decoded = this.decodeShareData(data);
                 
                 if (decoded.code) {
                     this.codeEditor.value = decoded.code;
