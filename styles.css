@@ -923,6 +923,7 @@ button {
 
 /* Code Window */
 .code-window {
+  --reflection-display: none;
   background: var(--bg-secondary);
   border-radius: var(--radius-lg);
   overflow: hidden;
@@ -930,6 +931,24 @@ button {
   max-width: 600px;
   width: 100%;
   margin: 0 auto;
+  position: relative;
+}
+
+.code-window::after {
+  content: "";
+  display: var(--reflection-display, none);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -40%;
+  height: 40%;
+  background: inherit;
+  transform: scaleY(-1);
+  opacity: 0.25;
+  filter: blur(8px);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent);
+  pointer-events: none;
 }
 
 .window-header {

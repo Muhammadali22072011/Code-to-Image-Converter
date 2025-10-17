@@ -578,30 +578,27 @@ class CodeToImageConverter {
             console.warn('Code window not ready for style application');
             return;
         }
-        
+
         try {
             // Apply window frame visibility
             const header = this.codeWindow.querySelector('.window-header');
             if (header) {
                 header.style.display = this.settings.showWindowFrame ? 'flex' : 'none';
-        }
-        
-        // Apply shadow
+            }
+
+            // Apply shadow
             this.codeWindow.style.boxShadow = this.settings.showShadow ? 'var(--shadow-xl)' : 'none';
-            
+
             // Apply width and border radius
             this.codeWindow.style.maxWidth = this.settings.width + 'px';
             this.codeWindow.style.borderRadius = this.settings.radius + 'px';
-        
-        // Apply reflection effect
-        if (this.settings.showReflection) {
-            this.codeWindow.style.setProperty('--reflection', 'block');
-        } else {
-            this.codeWindow.style.setProperty('--reflection', 'none');
-        }
+
+            // Apply reflection effect
+            const reflectionDisplay = this.settings.showReflection ? 'block' : 'none';
+            this.codeWindow.style.setProperty('--reflection-display', reflectionDisplay);
         } catch (error) {
             console.error('Error applying window styles:', error);
-    }
+        }
     }
     
     getFontFamily() {
