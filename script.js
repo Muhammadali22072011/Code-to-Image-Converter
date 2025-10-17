@@ -1142,7 +1142,7 @@ for i in range(10):
         this.loadSettingsToModal();
         this.updatePreview();
         this.updateLineNumbers();
-        this.initializeDropdowns();
+        this.updateAllDropdowns();
         this.showToast(this.t('settings_reset'), '🔄');
     }
     
